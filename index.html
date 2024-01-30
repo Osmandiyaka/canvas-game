@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Editor</title>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <div class="controls">
+        <button onclick="addPoint()">Add</button>
+    </div>
+    
+    <script type="module">
+        import {Application} from './dist/application.js'
+        const canvas=document.getElementById('myCanvas');
+        canvas.width = 900;
+        canvas.height = 500;
+        const app = new Application(canvas);
+        app.run();
+       window.addPoint= function addPoint() {
+            app.addRandomPoint(canvas.width,canvas.height);
+        }
+    </script>
+   
+</body>
+</html>
